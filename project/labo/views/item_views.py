@@ -8,7 +8,6 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def index(request):
     """Item一覧表示"""
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
     # TODO: コンテキスト出力はQueryService→DTO
     context = {
         'latest_question_list': latest_question_list
