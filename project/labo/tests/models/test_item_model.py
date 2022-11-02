@@ -6,7 +6,7 @@ def setUp():
     item = Item.objects.create(title='test_user1', content='password')
     item.save()
 
-
+@pytest.mark.django_db
 def test_user_model(setUp):
     assert Item.objects.filter(title='test_user1').count() == 1
     
