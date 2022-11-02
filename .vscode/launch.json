@@ -24,16 +24,13 @@
             "django": true
         },
         {
-            "name": "Dj Test",
+            "name": "Tests",
             "type": "python",
             "request": "launch",
-            "program": "/Users/yoshidayuuhei/product/django_labo/project/manage.py",
+            "program": "${file}",
+            "purpose": ["debug-test"],
             "console": "integratedTerminal",
-            "args": [
-                "test",
-                "labo"
-            ],
-            "django": true
+            "justMyCode": false     
         }
     ]
 }

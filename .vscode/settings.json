@@ -1,0 +1,11 @@
+{
+    // 単体テストツールとしてpytestを有効化
+    "python.testing.pytestEnabled": true,
+    // ファイル保存時にテスト対象コードを自動的に探索
+    "python.testing.autoTestDiscoverOnSaveEnabled": true,
+    "pythonTestExplorer.testplanEnabled": true,
+    "python.testing.cwd": "${workspaceFolder}",
+    "terminal.integrated.env.linux": {
+      "PYTHONPATH": "${workspaceFolder}/project"
+    }
+  }
