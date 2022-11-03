@@ -1,4 +1,3 @@
-import pdb
 import pytest
 from labo.models.user_model import CustomUser
 
