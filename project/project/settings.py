@@ -127,4 +127,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = "/labo/"
 DJANGO_SETTINGS_MODULE = 'project.settings'
-AUTH_USER_MODEL = 'labo.CustomUser'
+AUTH_USER_MODEL = 'labo.User'

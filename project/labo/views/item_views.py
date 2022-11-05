@@ -9,9 +9,9 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     """Item一覧表示"""
     # TODO: コンテキスト出力はQueryService→DTO
-    context = {
-        'latest_question_list': latest_question_list
-    }
+    # query_service = ItemQueryService
+    # context = query_service.get_all_items()
+    context = {}
     return render(request, 'labo/index.html', context)
 
 def detail(request, question_id):
