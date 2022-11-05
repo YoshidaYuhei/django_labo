@@ -23,3 +23,6 @@ class Item(models.Model):
     
     class Meta:
         db_table = "items"
+    
+    def __str__(self) -> str:
+        return self.title
