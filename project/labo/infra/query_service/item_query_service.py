@@ -2,11 +2,16 @@ from labo.models import Item
 from labo.infra.mapper import ItemMapper
 from labo.domain.dto import ItemSearchDto
 
-# QueryServiceはDBからQuerysetを取得するサービス
-# QuerySetをDtoに変換する仕事はMapperが担当する
+
 class ItemQueryService:
     
-    def get_all_items(self):
+    def all(self) -> list[ItemSearchDto]:
         query_sets = Item.objects.all()
-        dtos = [ItemSearchDto(x) for x in query_sets]
-        return dtos
+        return [ItemSearchDto(x) for x in query_sets]
+    
+    def fetch(self, item_id: int) -> ItemSearchDto:
+        query_set = Item.objects.filter(id=item_id)
+        return ItemSearchDto(query_set.first())
+    
+    def search(self, where: str) -> list[ItemSearchDto]:
+        query_sets = Item.objects.filter(where=where)
