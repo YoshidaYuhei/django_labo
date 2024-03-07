@@ -22,8 +22,13 @@
 ## SubCategory
 検討中
 
-## Jobs
-検討中
+## Media
+* 1 : book # 本
+* 2 : treatise # 論文
+* 3 : movie # 映画
+* 4 : tv # テレビ
+* 5 : web # Web
+* 6 : article # 記事
 
 ## ReportReason
 * 1 : suddenly canceled # ドタキャン
