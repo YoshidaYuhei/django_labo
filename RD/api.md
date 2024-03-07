@@ -21,7 +21,7 @@
 
 ## User
 ### `GET users`
-* 閲覧可能なのユーザーを取得する
+* ユーザーの一覧を取得する
 #### Query Parameters
     gender : int
     per : int
@@ -29,14 +29,14 @@
 #### Out
     List[UserCardOut]
 
-### `GET users/:user_id`
-* ユーザーの詳細情報を取得する
+### `GET users/profile/:user_id`
+* 特定のユーザープロフィール情報を取得する
 #### Path Parameters
     user_id : int
 #### Out
     UserProfileOut
 
-### `PUT users/:user_id`
+### `PUT users/profile/:user_id`
 * ユーザーのプロファイルを更新する
 #### In
     UserProfileIn
@@ -49,4 +49,35 @@
     user_id : int
 #### Out
     no_content
+
+## Ranking
+### `GET ranking/citations`
+* 引用をいいねの付いた数順で表示する
+#### Query Parameters
+    per : int
+    limit : int
+#### Out
+    List[Citation]
+
+### `GET ranking/sources`
+* 出典をいいねの付いた数順で表示する
+#### Query Parameters
+    per : int
+    limit : int
+#### Out
+    List[Citation]
+
+### `GET ranking/comments`
+
+## Citation
+### `GET citations`
+### `POST citations/`
+### `PUT citations/:citation_id`
+### `DELETE citations/:citation_id`
+
+## CiteReview
+### `GET cite_reviews/`
+### `POST cite_reviews/:citation_id`
+### `PUT cite_reviews/:review_id`
+### `DELETE cite_reviews/:review_id`
 
