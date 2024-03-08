@@ -1,7 +1,7 @@
 from django.urls import include, path
 from rest_framework import routers
 from accounts.views import CustomUserViewSet
-from airp.views import CitationViewSet
+from airp.viewsets.citation import CitationViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = routers.DefaultRouter()
