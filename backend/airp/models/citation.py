@@ -10,5 +10,5 @@ class Citation(models.Model):
     category = models.IntegerField(null=True, blank=True)
     media = models.IntegerField()
     tag_ids = models.TextField(null=True, blank=True)
-    created_at = models.DateField(default=timezone.now())
-    updated_at = models.DateField(default=timezone.now())
+    created_at = models.DateField(default=timezone.now)
+    updated_at = models.DateField(default=timezone.now)
