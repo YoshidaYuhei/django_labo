@@ -1,6 +1,7 @@
 from django.test import TestCase
 from airp.models.citation import Citation
 from accounts.models import CustomUser
+from airp.infra.query.citation import CitationQuery
 
 class TestQueryCitation(TestCase):
     def setUp(self):
@@ -9,7 +10,7 @@ class TestQueryCitation(TestCase):
             username="test"
             )
         self.citation = Citation.objects.create(
-            user_id=self.user,
+            user=self.user,
             citation="This is a citation",
             cite_comment="This is a comment",
             category=1,
@@ -19,12 +20,9 @@ class TestQueryCitation(TestCase):
             updated_at="2021-01-01"
         )
 
-    def test_citation(self):
-        self.assertEqual(self.citation.user_id, self.user)
-        self.assertEqual(self.citation.citation, "This is a citation")
-        self.assertEqual(self.citation.cite_comment, "This is a comment")
-        self.assertEqual(self.citation.category, 1)
-        self.assertEqual(self.citation.media, 1)
-        self.assertEqual(self.citation.tag_ids, "1,2,3")
-        self.assertEqual(self.citation.created_at, "2021-01-01")
-        self.assertEqual(self.citation.updated_at, "2021-01-01")
+    def test_all(self):
+        query = CitationQuery()
+        result = query.all()
+        breakpoint()
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0]['user_id'], self.user.id)
