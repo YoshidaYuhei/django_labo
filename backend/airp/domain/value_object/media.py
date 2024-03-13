@@ -1,6 +1,7 @@
-from enum import Enum
+from airp.domain.value_object.abstract import BaseIntEnum
 
-class Media(Enum):
+
+class Media(BaseIntEnum):
     BOOK = 1        # 本
     TREATISE = 2    # 論文
     MOVIE = 3       # 映画

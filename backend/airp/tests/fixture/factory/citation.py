@@ -14,7 +14,7 @@ class CitationFactory(DjangoModelFactory):
     citation = factory.Sequence(lambda n: f'This is a citation {n}')
     cite_comment = factory.Faker('text')
     category = factory.Faker('random_int')
-    media = random.choice(list(Media.__members__.values())).value
+    media = random.choice(Media.get_nums())
     tag_ids="1,2,3"
     created_at = timezone.now()
     updated_at = timezone.now()

@@ -6,6 +6,7 @@ from airp.domain.serializers.citation import CitationOut
 class CitationQuery:
     def all(self) -> List[CitationOut]:
         citations = Citation.objects.all()
-        ser = CitationOut(data=citations.to_dict(), many=True)
+        data = [c.to_dict() for c in citations]
+        ser = CitationOut(data=data, many=True)
         ser.is_valid()
         return ser.data
