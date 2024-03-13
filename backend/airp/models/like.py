@@ -1,9 +1,10 @@
 from django.utils import timezone
 from django.db import models
 from accounts.models import CustomUser
+from airp.models.abstract import BaseModel
 
 
-class Like(models.Model):
+class Like(BaseModel):
     sender = models.ForeignKey(CustomUser, on_delete=models.DO_NOTHING, related_name='sender')
     citation = models.ForeignKey('Citation', on_delete=models.DO_NOTHING)
     source = models.ForeignKey('Source', on_delete=models.DO_NOTHING)

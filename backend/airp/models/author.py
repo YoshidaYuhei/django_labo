@@ -1,9 +1,10 @@
 from django.utils import timezone
 from django.db import models
 from accounts.models import CustomUser
+from airp.models.abstract import BaseModel
 
 
-class Author(models.Model):
+class Author(BaseModel):
     author = models.CharField(max_length=1000)
     birth_day = models.DateTimeField(null=True, blank=True)
     categories = models.CharField(max_length=255, null=True, blank=True)
