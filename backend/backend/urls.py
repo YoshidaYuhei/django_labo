@@ -1,12 +1,12 @@
 from django.urls import include, path
 from rest_framework import routers
 from accounts.views import CustomUserViewSet
-from airp.viewsets.citation import CitationViewSet
+from airp.viewsets.citations import CitationsViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = routers.DefaultRouter()
 router.register(r'users', CustomUserViewSet)
-router.register(r'citations', CitationViewSet, basename='citation')
+router.register(r'citations', CitationsViewSet, basename='citations')
 
 urlpatterns = [
     path('', include(router.urls)),
